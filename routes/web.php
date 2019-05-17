@@ -29,3 +29,8 @@ Route::put('celulares/{celular}/editar', 'CelularController@update')->name('celu
 
 Route::delete('celulares/{celular}', 'CelularController@destroy')->name('celulares.destroy');
 
+Route::get('view', function(){
+	return view('layouts.app');
+
+});
+

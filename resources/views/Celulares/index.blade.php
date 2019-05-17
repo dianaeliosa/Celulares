@@ -1,13 +1,24 @@
-<a href="{{ route('celulares.create') }}">Registrar celulares</a>
+@extends('layouts.app')
+
+@section ('celular_marca', 'Lista de celulares')
+
+@section('content')
+
+<div class="text-rigth">
 	
+	<a href="{{ route('celulares.create') }}" class="btn btn-warning">Registrar celulares</a>
+
+</div>
+
 	<hr>
 
-	<table>
+	<table class="table table-hover">
 		<thead>
 		
 		<tr>
-			<td>Marca</td>
-			<td>Descrpcion</td>
+			<td>Marca del Celular</td>
+			<td>Descrpcion del Celular</td>
+			<td>Editar Registro del Celular</td>
 
 		</tr>
 
@@ -19,11 +30,11 @@
 		<tr>
 			<td>{{ $celular->marca }}</td>
 			<td>
-				<a href="{{ route('celulares.show', $celular) }}">Mostrar detalle del celular</a>
+				<a href="{{ route('celulares.show', $celular) }}" class="btn btn-success">Mostrar</a>
 			</td>
 			<td>
 				
-				<a href="{{ route('celulares.edit', $celular) }}">Editar Registros</a>
+				<a href="{{ route('celulares.edit', $celular) }}" class="btn btn-secondary">Editar</a>
 
 			</td>
 		
@@ -36,12 +47,11 @@
 
 		@endforelse
 
-
-
-
 	</tbody>	
 
 	</table>
+
+@endsection
 
 
 
